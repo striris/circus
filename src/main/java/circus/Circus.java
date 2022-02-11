@@ -1,6 +1,8 @@
 package circus;
 
 import circus.animal.*;
+
+import circus.stuff.Cage;
 import circus.stuff.Cannon;
 import circus.stuff.Equipment;
 import circus.stuff.Ladder;
@@ -71,13 +73,22 @@ public class Circus {
         System.out.printf("after sorting:");
         printAllAnimals(animalArrayList);
 
+        Cage<Duck> duckCage = new Cage<>();
+        duckCage.lockUp(louie);
+        Cage<Parrot> parrotCage = new Cage<>();
+        parrotCage.lockUp(andy);
+
+        ArrayList<Cage> cages = new ArrayList<>();
+        cages.add(duckCage);
+        cages.add(parrotCage);
 
 
-
+        for(Cage c: cages) {
+            c.release();
+        }
     }
-
     private static void printAllAnimals(ArrayList<Animal> animalArrayList) {
-        for(Animal a: animalArrayList) {
+        for(Animal a : animalArrayList) {
             System.out.println(a);
         }
     }
