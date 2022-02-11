@@ -86,6 +86,7 @@ public class Circus {
         for(Cage c: cages) {
             c.release();
         }
+        System.out.printf("That is all for today");
     }
     private static void printAllAnimals(ArrayList<Animal> animalArrayList) {
         for(Animal a : animalArrayList) {
